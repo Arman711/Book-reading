@@ -13,16 +13,16 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-bool a = true;
+bool isCreatedAccount = true;
 
 class _SignUpScreenState extends State<SignUpScreen> {
   void signUpOrSignIn() {
     setState(
       () {
-        if (a == true) {
-          a = false;
+        if (isCreatedAccount == true) {
+          isCreatedAccount = false;
         } else {
-          a = true;
+          isCreatedAccount = true;
         }
       },
     );
@@ -43,14 +43,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
               flex: 4,
             ),
             Text(
-              a ? 'Create your account' : 'Log in',
+              isCreatedAccount ? 'Create your account' : 'Log in',
               style: AppTypography.boldTexts24w6,
             ),
             const SizedBox(
               height: 4,
             ),
             Text(
-              a
+              isCreatedAccount
                   ? 'Create an account and explore a tailored library of captivating stories.'
                   : 'Welcome back! Log in to resume your reading journey.',
               style: AppTypography.s14w4c83,
@@ -68,14 +68,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
             const SizedBox(
               height: 14,
             ),
-            PrimaryButton(text: a ? 'Create new account' : 'Log in'),
+            PrimaryButton(
+                text: isCreatedAccount ? 'Create new account' : 'Log in'),
             const SizedBox(
               height: 14,
             ),
             Center(
               child: AuthSwitcherText(
-                text: a ? 'Already have an acount?' : 'Don’t have an acount?',
-                buttonText: a ? ' Login' : ' Sign up',
+                text: isCreatedAccount
+                    ? 'Already have an acount?'
+                    : 'Don’t have an acount?',
+                buttonText: isCreatedAccount ? ' Login' : ' Sign up',
                 onTap: signUpOrSignIn,
               ),
             ),
@@ -85,7 +88,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 14,
             ),
             GoogleButton(
-              text: a ? 'Sign up with Google' : 'Login with Google',
+              text: isCreatedAccount
+                  ? 'Sign up with Google'
+                  : 'Login with Google',
             ),
             const Spacer(
               flex: 6,
