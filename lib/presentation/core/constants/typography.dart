@@ -9,7 +9,7 @@ abstract class AppTypography {
   static const s14w4c83 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    color: Color(0xff838589),
+    color: AppColor.f83,
   );
   static const s14w4c30 = TextStyle(
     fontSize: 14,

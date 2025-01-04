@@ -3,7 +3,11 @@ import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:flutter/material.dart';
 
 class GoogleButton extends StatelessWidget {
-  const GoogleButton({super.key});
+  final String text;
+  const GoogleButton({
+    super.key,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +38,8 @@ class GoogleButton extends StatelessWidget {
             const SizedBox(
               width: 8,
             ),
-            const Text(
-              'Sign up with Google',
+            Text(
+              text,
               style: AppTypography.s14w5c853,
             ),
           ],
