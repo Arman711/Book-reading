@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
+import 'package:book_reading/presentation/core/router/router.dart';
 import 'package:book_reading/presentation/core/widgets/primary_button.dart';
 import 'package:book_reading/presentation/sign_up_screen/widgets/app_divider.dart';
 import 'package:book_reading/presentation/sign_up_screen/widgets/auth_switcher_text.dart';
@@ -6,6 +8,7 @@ import 'package:book_reading/presentation/sign_up_screen/widgets/app_text_field.
 import 'package:book_reading/presentation/sign_up_screen/widgets/google_button.dart';
 import 'package:flutter/material.dart';
 
+@RoutePage()
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
@@ -69,7 +72,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 14,
             ),
             PrimaryButton(
-                text: isCreatedAccount ? 'Create new account' : 'Log in'),
+              text: isCreatedAccount ? 'Create new account' : 'Log in',
+              onTap: () {
+                context.router.push(const GeneralRoute());
+              },
+            ),
             const SizedBox(
               height: 14,
             ),

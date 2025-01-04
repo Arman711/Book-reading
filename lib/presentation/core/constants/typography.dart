@@ -6,10 +6,19 @@ abstract class AppTypography {
     fontSize: 24,
     fontWeight: FontWeight.w600,
   );
+  static const s18w6 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
   static const s14w4c83 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColor.f83,
+  );
+  static const s14w5cb842 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColor.black842,
   );
   static const s14w4c30 = TextStyle(
     fontSize: 14,
@@ -25,5 +34,15 @@ abstract class AppTypography {
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: AppColor.a853,
+  );
+  static const s18w7c853 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    color: AppColor.a853,
+  );
+  static const s16w5c842 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColor.black842,
   );
 }

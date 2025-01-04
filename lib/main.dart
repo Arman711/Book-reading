@@ -1,5 +1,7 @@
-import 'package:book_reading/presentation/sign_up_screen/sign_up_screen.dart';
+import 'package:book_reading/presentation/core/router/router.dart';
 import 'package:flutter/material.dart';
+
+final AppRouter appRouter = AppRouter();
 
 void main() {
   runApp(const MyApp());
@@ -8,9 +10,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: SignUpScreen());
+    return MaterialApp.router(
+      routerConfig: appRouter.config(),
+    );
   }
 }
