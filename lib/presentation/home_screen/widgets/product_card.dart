@@ -1,3 +1,4 @@
+import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:book_reading/presentation/home_screen/widgets/type_of_book.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class ProductCard extends StatelessWidget {
     return SizedBox(
       width: 180,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 250,
@@ -21,10 +23,10 @@ class ProductCard extends StatelessWidget {
             child: Stack(
               alignment: AlignmentDirectional.topEnd,
               children: [
-                Image.asset('assets/images/product.png'),
+                Image.asset(Assets.images.product.path),
                 TypeOfBook(
                   text: typeText,
-                )
+                ),
               ],
             ),
           ),

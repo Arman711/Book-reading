@@ -1,13 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:book_reading/gen/assets.gen.dart';
+import 'package:book_reading/presentation/collection_screen/widgets/collection_product_card.dart';
+import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:book_reading/presentation/core/widgets/custom_appbar.dart';
-import 'package:book_reading/presentation/explore_screen/widgets/content_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 @RoutePage()
-class ExploreScreen extends StatelessWidget {
-  const ExploreScreen({super.key});
+class CollectionScreen extends StatelessWidget {
+  const CollectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +32,30 @@ class ExploreScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 296,
-                width: 217,
-                child: Image.asset(Assets.images.product.path),
+              const Text(
+                'My Collections',
+                style: AppTypography.s18w6,
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
-              const ContentTile(),
+              SizedBox(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height,
+                child: ListView.separated(
+                  itemBuilder: (context, index) {
+                    return const CollectionProductCard();
+                  },
+                  separatorBuilder: (context, index) {
+                    return const SizedBox(
+                      height: 36,
+                    );
+                  },
+                  itemCount: 3,
+                ),
+              ),
             ],
           ),
         ),

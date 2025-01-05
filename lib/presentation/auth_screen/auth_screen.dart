@@ -1,32 +1,31 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:book_reading/gen/assets.gen.dart';
+import 'package:book_reading/presentation/core/constants/colors.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:book_reading/presentation/core/router/router.dart';
 import 'package:book_reading/presentation/core/widgets/primary_button.dart';
-import 'package:book_reading/presentation/sign_up_screen/widgets/app_divider.dart';
-import 'package:book_reading/presentation/sign_up_screen/widgets/auth_switcher_text.dart';
-import 'package:book_reading/presentation/sign_up_screen/widgets/app_text_field.dart';
-import 'package:book_reading/presentation/sign_up_screen/widgets/google_button.dart';
+import 'package:book_reading/presentation/auth_screen/widgets/app_divider.dart';
+import 'package:book_reading/presentation/auth_screen/widgets/auth_switcher_text.dart';
+import 'package:book_reading/presentation/auth_screen/widgets/app_text_field.dart';
+import 'package:book_reading/presentation/auth_screen/widgets/google_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 @RoutePage()
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class AuthScreen extends StatefulWidget {
+  const AuthScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<AuthScreen> createState() => _AuthScreenState();
 }
 
 bool isCreatedAccount = true;
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _AuthScreenState extends State<AuthScreen> {
   void signUpOrSignIn() {
     setState(
       () {
-        if (isCreatedAccount == true) {
-          isCreatedAccount = false;
-        } else {
-          isCreatedAccount = true;
-        }
+        isCreatedAccount = !isCreatedAccount;
       },
     );
   }
@@ -52,11 +51,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
             const SizedBox(
               height: 4,
             ),
-            Text(
-              isCreatedAccount
-                  ? 'Create an account and explore a tailored library of captivating stories.'
-                  : 'Welcome back! Log in to resume your reading journey.',
-              style: AppTypography.s14w4c83,
+            SizedBox(
+              height: 50,
+              child: Text(
+                isCreatedAccount
+                    ? 'Create an account and explore a tailored library of captivating stories.'
+                    : 'Welcome back! Log in to resume your reading journey.',
+                style: AppTypography.s14w4c83,
+              ),
             ),
             const Spacer(
               flex: 2,
@@ -64,9 +66,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
             const AppTextField(
               text: 'Email address',
             ),
-            const AppTextField(
+            AppTextField(
               text: 'Password',
-              suffixIcon: Icons.remove_red_eye_outlined,
+              suffixIcon: SvgPicture.asset(
+                Assets.icons.eye,
+                height: 16,
+                width: 20,
+                fit: BoxFit.none,
+              ),
+              iconColor: AppColor.f83,
             ),
             const SizedBox(
               height: 14,
@@ -74,7 +82,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             PrimaryButton(
               text: isCreatedAccount ? 'Create new account' : 'Log in',
               onTap: () {
-                context.router.push(const GeneralRoute());
+                context.router.push(const General1Route());
               },
             ),
             const SizedBox(

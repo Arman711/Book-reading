@@ -1,3 +1,4 @@
+import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/constants/colors.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class GoogleButton extends StatelessWidget {
               height: 20,
               width: 20,
               child: Image.asset(
-                'assets/images/google.png',
+                Assets.images.google.path,
                 height: 20,
                 width: 20,
                 fit: BoxFit.cover,

@@ -45,4 +45,9 @@ abstract class AppTypography {
     fontWeight: FontWeight.w500,
     color: AppColor.black842,
   );
+  static const s14w6c842 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColor.black842,
+  );
 }

@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:book_reading/presentation/core/widgets/custom_appbar.dart';
 import 'package:book_reading/presentation/home_screen/widgets/product_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 @RoutePage()
 class HomeScreen extends StatelessWidget {
@@ -12,14 +14,24 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppbar(
-        prefixIcon: Icons.menu,
+        prefixIcon: SvgPicture.asset(
+          Assets.icons.menu,
+          height: 18,
+          width: 18,
+          fit: BoxFit.none,
+        ),
         text: 'Read Ease',
-        suffixIcon: Icons.notifications_none,
+        suffixIcon: SvgPicture.asset(
+          Assets.icons.notification,
+          height: 18,
+          width: 18,
+          fit: BoxFit.none,
+        ),
         top: MediaQuery.of(context).viewPadding.top,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
