@@ -1,9 +1,13 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:book_reading/application/book_bloc/book_bloc.dart';
+import 'package:book_reading/application/cubit/non_fiction_book_cubit.dart';
+import 'package:book_reading/domain/book/entity/book.dart';
 import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:book_reading/presentation/core/widgets/custom_appbar.dart';
 import 'package:book_reading/presentation/home_screen/widgets/product_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 @RoutePage()
@@ -46,22 +50,40 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 22,
               ),
-              SizedBox(
-                height: 330,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      width: 20,
-                    );
-                  },
-                  itemBuilder: (context, index) {
-                    return const ProductCard(
-                      typeText: 'Fiction',
-                    );
-                  },
-                  itemCount: 4,
-                ),
+              BlocBuilder<BookBloc, BookState>(
+                builder: (context, state) {
+                  return state.when(
+                    initial: () => const SizedBox(),
+                    loading: () => const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                    success: (books) => SizedBox(
+                      height: 330,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        separatorBuilder: (context, index) {
+                          return const SizedBox(
+                            width: 20,
+                          );
+                        },
+                        itemBuilder: (context, index) {
+                          final Book book = books[index];
+                          return ProductCard(
+                            typeText: 'Fiction',
+                            imgUrl: book.imgUrl.isNotEmpty
+                                ? book.imgUrl
+                                : Assets.images.product.path,
+                            title: book.title,
+                          );
+                        },
+                        itemCount: 4,
+                      ),
+                    ),
+                    failure: (messege) => Center(
+                      child: Text(messege),
+                    ),
+                  );
+                },
               ),
               const SizedBox(
                 height: 32,
@@ -77,22 +99,40 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
-                height: 330,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      width: 20,
-                    );
-                  },
-                  itemBuilder: (context, index) {
-                    return const ProductCard(
-                      typeText: 'Non-Fiction',
-                    );
-                  },
-                  itemCount: 4,
-                ),
+              BlocBuilder<NonFictionBookCubit, NonFictionBookState>(
+                builder: (context, state) {
+                  return state.when(
+                    initial: () => const SizedBox(),
+                    loading: () => const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                    failure: (message) => Center(
+                      child: Text(message),
+                    ),
+                    success: (books) => SizedBox(
+                      height: 330,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        separatorBuilder: (context, index) {
+                          return const SizedBox(
+                            width: 20,
+                          );
+                        },
+                        itemBuilder: (context, index) {
+                          final Book book = books[index];
+                          return ProductCard(
+                            typeText: 'Non-Fiction',
+                            imgUrl: book.imgUrl.isNotEmpty
+                                ? book.imgUrl
+                                : Assets.images.product.path,
+                            title: book.title,
+                          );
+                        },
+                        itemCount: 4,
+                      ),
+                    ),
+                  );
+                },
               ),
             ],
           ),

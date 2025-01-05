@@ -5,40 +5,53 @@ import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
   final String typeText;
+  final String imgUrl;
+  final String title;
   const ProductCard({
     super.key,
     required this.typeText,
+    required this.imgUrl,
+    required this.title,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 180,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 250,
-            width: 180,
-            child: Stack(
-              alignment: AlignmentDirectional.topEnd,
-              children: [
-                Image.asset(Assets.images.product.path),
-                TypeOfBook(
-                  text: typeText,
-                ),
-              ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              child: Stack(
+                alignment: AlignmentDirectional.topEnd,
+                children: [
+                  SizedBox(
+                    height: 250,
+                    width: 180,
+                    child: imgUrl.contains('assets')
+                        ? Image.asset(Assets.images.product.path)
+                        : Image.network(
+                            imgUrl,
+                            fit: BoxFit.cover,
+                          ),
+                  ),
+                  TypeOfBook(
+                    text: typeText,
+                  ),
+                ],
+              ),
             ),
-          ),
-          const Text(
-            'I Want a Better Catastrophe',
-            style: AppTypography.s14w5cb842,
-          ),
-          const Text(
-            'With global warming projected to rocket past the...',
-            style: AppTypography.s14w4c83,
-          )
-        ],
+            Text(
+              title,
+              style: AppTypography.s14w5cb842,
+            ),
+            const Text(
+              'With global warming projected to rocket past the...',
+              style: AppTypography.s14w4c83,
+            )
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:book_reading/application/book_bloc/book_bloc.dart';
+import 'package:book_reading/application/cubit/non_fiction_book_cubit.dart';
 import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/constants/colors.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
@@ -9,6 +11,7 @@ import 'package:book_reading/presentation/auth_screen/widgets/auth_switcher_text
 import 'package:book_reading/presentation/auth_screen/widgets/app_text_field.dart';
 import 'package:book_reading/presentation/auth_screen/widgets/google_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 @RoutePage()
@@ -82,7 +85,13 @@ class _AuthScreenState extends State<AuthScreen> {
             PrimaryButton(
               text: isCreatedAccount ? 'Create new account' : 'Log in',
               onTap: () {
-                context.router.push(const General1Route());
+                context.read<BookBloc>().add(
+                      const BookEvent.fetchBook('fiction'),
+                    );
+                context.read<NonFictionBookCubit>().fetchBooks('non-fiction');
+                context.router.push(
+                  const General1Route(),
+                );
               },
             ),
             const SizedBox(
