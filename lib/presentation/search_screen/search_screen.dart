@@ -14,7 +14,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(
+      appBar: CustomAppBar(
         top: MediaQuery.of(context).padding.top,
         prefixIcon: SvgPicture.asset(
           Assets.icons.arrowLeft,
@@ -22,12 +22,15 @@ class SearchScreen extends StatelessWidget {
           width: 14,
           fit: BoxFit.none,
         ),
-        suffixIcon: SvgPicture.asset(
-          Assets.icons.notification,
-          height: 18,
-          width: 18,
-          fit: BoxFit.none,
+        suffixIcon: Image.asset(
+          Assets.images.notification.path,
         ),
+        // suffixIcon: SvgPicture.asset(
+        //   Assets.icons.notification,
+        //   height: 18,
+        //   width: 18,
+        //   fit: BoxFit.none,
+        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(

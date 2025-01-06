@@ -24,6 +24,7 @@ mixin _$Book {
   String get title => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
   String get imgUrl => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   /// Serializes this Book to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +40,12 @@ abstract class $BookCopyWith<$Res> {
   factory $BookCopyWith(Book value, $Res Function(Book) then) =
       _$BookCopyWithImpl<$Res, Book>;
   @useResult
-  $Res call({String id, String title, String author, String imgUrl});
+  $Res call(
+      {String id,
+      String title,
+      String author,
+      String imgUrl,
+      String description});
 }
 
 /// @nodoc
@@ -61,6 +67,7 @@ class _$BookCopyWithImpl<$Res, $Val extends Book>
     Object? title = null,
     Object? author = null,
     Object? imgUrl = null,
+    Object? description = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -79,6 +86,10 @@ class _$BookCopyWithImpl<$Res, $Val extends Book>
           ? _value.imgUrl
           : imgUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -90,7 +101,12 @@ abstract class _$$BookImplCopyWith<$Res> implements $BookCopyWith<$Res> {
       __$$BookImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, String author, String imgUrl});
+  $Res call(
+      {String id,
+      String title,
+      String author,
+      String imgUrl,
+      String description});
 }
 
 /// @nodoc
@@ -109,6 +125,7 @@ class __$$BookImplCopyWithImpl<$Res>
     Object? title = null,
     Object? author = null,
     Object? imgUrl = null,
+    Object? description = null,
   }) {
     return _then(_$BookImpl(
       id: null == id
@@ -127,6 +144,10 @@ class __$$BookImplCopyWithImpl<$Res>
           ? _value.imgUrl
           : imgUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -138,7 +159,8 @@ class _$BookImpl implements _Book {
       {required this.id,
       required this.title,
       required this.author,
-      required this.imgUrl});
+      required this.imgUrl,
+      required this.description});
 
   factory _$BookImpl.fromJson(Map<String, dynamic> json) =>
       _$$BookImplFromJson(json);
@@ -151,10 +173,12 @@ class _$BookImpl implements _Book {
   final String author;
   @override
   final String imgUrl;
+  @override
+  final String description;
 
   @override
   String toString() {
-    return 'Book(id: $id, title: $title, author: $author, imgUrl: $imgUrl)';
+    return 'Book(id: $id, title: $title, author: $author, imgUrl: $imgUrl, description: $description)';
   }
 
   @override
@@ -165,12 +189,15 @@ class _$BookImpl implements _Book {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.author, author) || other.author == author) &&
-            (identical(other.imgUrl, imgUrl) || other.imgUrl == imgUrl));
+            (identical(other.imgUrl, imgUrl) || other.imgUrl == imgUrl) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, author, imgUrl);
+  int get hashCode =>
+      Object.hash(runtimeType, id, title, author, imgUrl, description);
 
   /// Create a copy of Book
   /// with the given fields replaced by the non-null parameter values.
@@ -193,7 +220,8 @@ abstract class _Book implements Book {
       {required final String id,
       required final String title,
       required final String author,
-      required final String imgUrl}) = _$BookImpl;
+      required final String imgUrl,
+      required final String description}) = _$BookImpl;
 
   factory _Book.fromJson(Map<String, dynamic> json) = _$BookImpl.fromJson;
 
@@ -205,6 +233,8 @@ abstract class _Book implements Book {
   String get author;
   @override
   String get imgUrl;
+  @override
+  String get description;
 
   /// Create a copy of Book
   /// with the given fields replaced by the non-null parameter values.

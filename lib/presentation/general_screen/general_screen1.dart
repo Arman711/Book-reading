@@ -20,6 +20,8 @@ class General1Screen extends StatelessWidget {
       bottomNavigationBuilder: (context, tabsRouter) {
         return BottomNavigationBar(
           selectedItemColor: AppColor.a853,
+          unselectedItemColor: AppColor.e32,
+          selectedIconTheme: const IconThemeData(color: AppColor.a853),
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
           items: [
@@ -29,6 +31,10 @@ class General1Screen extends StatelessWidget {
                 height: 20,
                 width: 18,
                 fit: BoxFit.none,
+                colorFilter: ColorFilter.mode(
+                  tabsRouter.activeIndex == 0 ? AppColor.a853 : AppColor.e32,
+                  BlendMode.srcIn,
+                ),
               ),
               label: 'Home',
             ),
@@ -38,6 +44,10 @@ class General1Screen extends StatelessWidget {
                 height: 18,
                 width: 18,
                 fit: BoxFit.none,
+                colorFilter: ColorFilter.mode(
+                  tabsRouter.activeIndex == 1 ? AppColor.a853 : AppColor.e32,
+                  BlendMode.srcIn,
+                ),
               ),
               label: 'Explore',
             ),
@@ -47,6 +57,10 @@ class General1Screen extends StatelessWidget {
                 height: 20,
                 width: 16,
                 fit: BoxFit.none,
+                colorFilter: ColorFilter.mode(
+                  tabsRouter.activeIndex == 2 ? AppColor.a853 : AppColor.e32,
+                  BlendMode.srcIn,
+                ),
               ),
               label: 'My Collection',
             ),

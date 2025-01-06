@@ -1,12 +1,12 @@
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:flutter/material.dart';
 
-class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final String? text;
   final double top;
-  const CustomAppbar({
+  const CustomAppBar({
     super.key,
     this.prefixIcon,
     this.suffixIcon,
@@ -22,7 +22,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         vertical: top,
       ),
       child: SizedBox(
-        height: 40,
+        height: 56,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -33,7 +33,11 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
                     style: AppTypography.s18w7c853,
                   )
                 : const Text(''),
-            SizedBox(child: suffixIcon),
+            SizedBox(
+              height: 20,
+              width: 18,
+              child: suffixIcon,
+            ),
           ],
         ),
       ),
@@ -41,5 +45,5 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size(double.infinity, top + 40);
+  Size get preferredSize => Size(double.infinity, top + 56);
 }

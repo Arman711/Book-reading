@@ -30,9 +30,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/menu.svg
   String get menu => 'assets/icons/menu.svg';
 
-  /// File path: assets/icons/notification.svg
-  String get notification => 'assets/icons/notification.svg';
-
   /// File path: assets/icons/save.svg
   String get save => 'assets/icons/save.svg';
 
@@ -41,7 +38,7 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<String> get values =>
-      [arrowLeft, book, delete, eye, home, menu, notification, save, search];
+      [arrowLeft, book, delete, eye, home, menu, save, search];
 }
 
 class $AssetsImagesGen {
@@ -50,11 +47,15 @@ class $AssetsImagesGen {
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
 
+  /// File path: assets/images/notification.png
+  AssetGenImage get notification =>
+      const AssetGenImage('assets/images/notification.png');
+
   /// File path: assets/images/product.png
   AssetGenImage get product => const AssetGenImage('assets/images/product.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [google, product];
+  List<AssetGenImage> get values => [google, notification, product];
 }
 
 class Assets {

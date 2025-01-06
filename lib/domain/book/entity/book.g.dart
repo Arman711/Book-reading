@@ -11,6 +11,7 @@ _$BookImpl _$$BookImplFromJson(Map<String, dynamic> json) => _$BookImpl(
       title: json['title'] as String,
       author: json['author'] as String,
       imgUrl: json['imgUrl'] as String,
+      description: json['description'] as String,
     );
 
 Map<String, dynamic> _$$BookImplToJson(_$BookImpl instance) =>
@@ -19,4 +20,5 @@ Map<String, dynamic> _$$BookImplToJson(_$BookImpl instance) =>
       'title': instance.title,
       'author': instance.author,
       'imgUrl': instance.imgUrl,
+      'description': instance.description,
     };

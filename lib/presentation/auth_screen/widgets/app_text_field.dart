@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AppTextField extends StatelessWidget {
+  final bool isObscureText;
   final String? text;
   final SvgPicture? suffixIcon;
   final Color? textColor;
@@ -14,6 +15,7 @@ class AppTextField extends StatelessWidget {
     this.suffixIcon,
     this.textColor,
     this.iconColor,
+    this.isObscureText = false,
   });
 
   @override
@@ -39,6 +41,7 @@ class AppTextField extends StatelessWidget {
           ),
           child: TextField(
             style: TextStyle(color: textColor),
+            obscureText: isObscureText,
             decoration: InputDecoration(
               border: InputBorder.none,
               suffixIcon: suffixIcon,
