@@ -5,14 +5,17 @@ import 'package:flutter/material.dart';
 
 class GoogleButton extends StatelessWidget {
   final String text;
+  final void Function() onTap;
   const GoogleButton({
     super.key,
     required this.text,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         height: 50,

@@ -1,8 +1,10 @@
+import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:book_reading/application/cubit/get_book_cubit.dart';
 import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/widgets/custom_appbar.dart';
 import 'package:book_reading/presentation/explore_screen/widgets/content_tile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,16 +25,15 @@ class ExploreScreen extends StatelessWidget {
             width: 18,
             fit: BoxFit.none,
           ),
-          suffixIcon: Image.asset(
-            Assets.images.notification.path,
-            fit: BoxFit.cover,
+          suffixIcon: InkWell(
+            onTap: () {
+              log(FirebaseAuth.instance.currentUser!.uid);
+            },
+            child: Image.asset(
+              Assets.images.notification.path,
+              fit: BoxFit.cover,
+            ),
           ),
-          // suffixIcon: SvgPicture.asset(
-          //   Assets.icons.notification,
-          //   height: 24,
-          //   width: 22,
-          //   fit: BoxFit.none,
-          // ),
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),

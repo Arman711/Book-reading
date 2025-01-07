@@ -13,6 +13,7 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController searchController = TextEditingController();
     return Scaffold(
       appBar: CustomAppBar(
         top: MediaQuery.of(context).padding.top,
@@ -25,12 +26,6 @@ class SearchScreen extends StatelessWidget {
         suffixIcon: Image.asset(
           Assets.images.notification.path,
         ),
-        // suffixIcon: SvgPicture.asset(
-        //   Assets.icons.notification,
-        //   height: 18,
-        //   width: 18,
-        //   fit: BoxFit.none,
-        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -40,6 +35,7 @@ class SearchScreen extends StatelessWidget {
           child: Column(
             children: [
               AppTextField(
+                controller: searchController,
                 textColor: AppColor.f83,
                 suffixIcon: SvgPicture.asset(
                   Assets.icons.search,
@@ -56,7 +52,9 @@ class SearchScreen extends StatelessWidget {
                 height: 600,
                 child: ListView.separated(
                   itemBuilder: (context, index) {
-                    return const SearchedText(text: 'The Midnight Library');
+                    return const SearchedText(
+                      text: 'The Midnight Library',
+                    );
                   },
                   separatorBuilder: (context, index) {
                     return const SizedBox(
@@ -65,7 +63,7 @@ class SearchScreen extends StatelessWidget {
                   },
                   itemCount: 30,
                 ),
-              )
+              ),
             ],
           ),
         ),

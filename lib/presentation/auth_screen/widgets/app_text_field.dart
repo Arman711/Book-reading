@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AppTextField extends StatelessWidget {
+  final TextEditingController controller;
   final bool isObscureText;
   final String? text;
   final SvgPicture? suffixIcon;
@@ -11,6 +12,7 @@ class AppTextField extends StatelessWidget {
   final Color? iconColor;
   const AppTextField({
     super.key,
+    required this.controller,
     this.text,
     this.suffixIcon,
     this.textColor,
@@ -40,6 +42,7 @@ class AppTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextField(
+            controller: controller,
             style: TextStyle(color: textColor),
             obscureText: isObscureText,
             decoration: InputDecoration(

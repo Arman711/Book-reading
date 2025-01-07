@@ -67,20 +67,20 @@ class ExploreRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [General1Screen]
-class General1Route extends PageRouteInfo<void> {
-  const General1Route({List<PageRouteInfo>? children})
+/// [GeneralScreen]
+class GeneralRoute extends PageRouteInfo<void> {
+  const GeneralRoute({List<PageRouteInfo>? children})
       : super(
-          General1Route.name,
+          GeneralRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'General1Route';
+  static const String name = 'GeneralRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const General1Screen();
+      return const GeneralScreen();
     },
   );
 }

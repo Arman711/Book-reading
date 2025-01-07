@@ -60,7 +60,7 @@ class ProductCard extends StatelessWidget {
               const Text(
                 'With global warming projected to rocket past the...',
                 style: AppTypography.s14w4c83,
-              )
+              ),
             ],
           ),
         ),

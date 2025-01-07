@@ -24,12 +24,6 @@ class CollectionScreen extends StatelessWidget {
         suffixIcon: Image.asset(
           Assets.images.notification.path,
         ),
-        // suffixIcon: SvgPicture.asset(
-        //   Assets.icons.notification,
-        //   height: 20,
-        //   width: 18,
-        //   fit: BoxFit.none,
-        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),

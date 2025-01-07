@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:book_reading/domain/book/entity/book.dart';
 import 'package:book_reading/domain/book/i_book_repository.dart';
 import 'package:book_reading/gen/assets.gen.dart';
@@ -14,7 +15,7 @@ class BookRepositoryImpl implements IBookRepository {
       final response = await http.get(
         Uri.parse('$url?q=$type'),
       );
-
+      log(response.statusCode.toString());
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         final books = (data['items'] as List).map(
@@ -35,10 +36,14 @@ class BookRepositoryImpl implements IBookRepository {
         ).toList();
         return Right(books);
       } else {
-        return const Left('Failed to fetch books');
+        return const Left(
+          'Failed to fetch books',
+        );
       }
     } catch (e) {
-      return const Left('Failed to load books');
+      return const Left(
+        'Failed to load books',
+      );
     }
   }
 
@@ -50,7 +55,7 @@ class BookRepositoryImpl implements IBookRepository {
       final response = await http.get(
         Uri.parse('$url/$id'),
       );
-
+      log(response.statusCode.toString());
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
 
@@ -69,10 +74,14 @@ class BookRepositoryImpl implements IBookRepository {
 
         return Right(book);
       } else {
-        return const Left('Failed to fetch the book');
+        return const Left(
+          'Failed to fetch the book',
+        );
       }
     } catch (e) {
-      return Left('Failed to load book: $e');
+      return Left(
+        'Failed to load book: $e',
+      );
     }
   }
 }

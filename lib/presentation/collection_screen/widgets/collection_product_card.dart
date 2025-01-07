@@ -48,10 +48,10 @@ class CollectionProductCard extends StatelessWidget {
               Text(
                 'The story follows a woman named Nora Seed.',
                 style: AppTypography.s14w4c83,
-              )
+              ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

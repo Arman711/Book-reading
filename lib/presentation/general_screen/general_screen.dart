@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 @RoutePage()
-class General1Screen extends StatelessWidget {
-  const General1Screen({super.key});
+class GeneralScreen extends StatelessWidget {
+  const GeneralScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

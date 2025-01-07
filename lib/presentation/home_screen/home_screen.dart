@@ -30,10 +30,6 @@ class HomeScreen extends StatelessWidget {
             Assets.images.notification.path,
             fit: BoxFit.cover,
           ),
-          // suffixIcon: SvgPicture.asset(
-          //   Assets.icons.notification,
-          //   // fit: BoxFit.cover,
-          // ),
           top: MediaQuery.of(context).viewPadding.top,
         ),
         body: SingleChildScrollView(
