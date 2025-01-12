@@ -12,7 +12,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AuthBody extends StatefulWidget {
-  const AuthBody({super.key});
+  final bool isSuccess;
+  final bool isFailure;
+  final String? errorMsg;
+  final TextEditingController emailController;
+  const AuthBody({
+    super.key,
+    required this.emailController,
+    this.errorMsg,
+    this.isFailure = false,
+    this.isSuccess = false,
+  });
 
   @override
   State<AuthBody> createState() => _AuthScreenState();
@@ -31,8 +41,14 @@ class _AuthScreenState extends State<AuthBody> {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
+    TextEditingController emailController = widget.emailController;
     TextEditingController passwordController = TextEditingController();
+    String errorMsg;
+    if (widget.errorMsg == null) {
+      errorMsg = '';
+    } else {
+      errorMsg = widget.errorMsg as String;
+    }
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -66,10 +82,19 @@ class _AuthScreenState extends State<AuthBody> {
                 flex: 2,
               ),
               AppTextField(
+                isFailure: widget.isFailure,
                 controller: emailController,
                 text: 'Email address',
               ),
+              // ignore: unnecessary_null_comparison
+              errorMsg != null
+                  ? Text(
+                      errorMsg,
+                      style: const TextStyle(color: Colors.red),
+                    )
+                  : const SizedBox(),
               AppTextField(
+                isFailure: widget.isFailure,
                 controller: passwordController,
                 text: 'Password',
                 isObscureText: true,
@@ -84,26 +109,30 @@ class _AuthScreenState extends State<AuthBody> {
               const SizedBox(
                 height: 14,
               ),
-              PrimaryButton(
-                text: isCreatedAccount ? 'Create new account' : 'Log in',
-                onTap: () async {
-                  if (isCreatedAccount) {
-                    context.read<AuthBloc>().add(
-                          AuthEvent.signUpWithEmailAndPassword(
-                            email: emailController.text,
-                            password: passwordController.text,
-                          ),
-                        );
-                  } else {
-                    context.read<AuthBloc>().add(
-                          AuthEvent.logIn(
-                            email: emailController.text,
-                            password: passwordController.text,
-                          ),
-                        );
-                  }
-                },
-              ),
+              widget.isSuccess
+                  ? const Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : PrimaryButton(
+                      text: isCreatedAccount ? 'Create new account' : 'Log in',
+                      onTap: () async {
+                        if (isCreatedAccount) {
+                          context.read<AuthBloc>().add(
+                                AuthEvent.signUpWithEmailAndPassword(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                ),
+                              );
+                        } else {
+                          context.read<AuthBloc>().add(
+                                AuthEvent.logIn(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                ),
+                              );
+                        }
+                      },
+                    ),
               const SizedBox(
                 height: 14,
               ),

@@ -80,8 +80,14 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<String, Unit>> signOut() {
-    // TODO: implement signOut
-    throw UnimplementedError();
+  bool checkIfUserSignedIn() {
+    final user = _auth.currentUser;
+    final authenticated = user != null;
+    return authenticated;
+  }
+
+  @override
+  Future<void> signOut() async {
+    await _auth.signOut();
   }
 }

@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:book_reading/application/auth_bloc/auth_bloc.dart';
-import 'package:book_reading/application/book_bloc/book_bloc.dart';
-import 'package:book_reading/application/non_fiction_cubit/non_fiction_book_cubit.dart';
-import 'package:book_reading/presentation/auth_screen/auth_body.dart';
+import 'package:book_reading/application/user_bloc/user_bloc.dart';
+import 'package:book_reading/domain/user/entity/app_user.dart';
+import 'package:book_reading/presentation/auth_screen/widgets/auth_body.dart';
 import 'package:book_reading/presentation/core/router/router.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,23 +14,35 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailController = TextEditingController();
     return BlocConsumer<AuthBloc, AuthState>(
       builder: (context, state) => state.maybeWhen(
-        loading: () => const Center(
-          child: CircularProgressIndicator(),
+        loading: () => AuthBody(
+          emailController: emailController,
+          isSuccess: true,
         ),
-        orElse: () => const AuthBody(),
+        failure: (message) => AuthBody(
+          errorMsg: message,
+          emailController: emailController,
+          isFailure: true,
+        ),
+        orElse: () => AuthBody(
+          emailController: emailController,
+        ),
       ),
       listener: (context, state) => state.whenOrNull(
+        // ignore: body_might_complete_normally_nullable
         success: () {
-          context.read<BookBloc>().add(
-                const BookEvent.fetchBook(
-                  'fiction',
+          context.read<UserBloc>().add(
+                UserEvent.createUser(
+                  user: AppUser(
+                    id: FirebaseAuth.instance.currentUser!.uid,
+                    email: emailController.text,
+                    bookCollection: [],
+                  ),
                 ),
               );
-          context.read<NonFictionBookCubit>().fetchBooks(
-                'non-fiction',
-              );
+
           context.router.push(
             const GeneralRoute(),
           );

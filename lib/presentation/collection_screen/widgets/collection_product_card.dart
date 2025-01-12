@@ -1,10 +1,20 @@
 import 'package:book_reading/gen/assets.gen.dart';
-import 'package:book_reading/presentation/core/constants/colors.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CollectionProductCard extends StatelessWidget {
-  const CollectionProductCard({super.key});
+  final String title;
+  final String imgUrl;
+  final String author;
+  final String description;
+  const CollectionProductCard({
+    super.key,
+    required this.title,
+    required this.imgUrl,
+    required this.author,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +24,13 @@ class CollectionProductCard extends StatelessWidget {
           flex: 2,
           child: SizedBox(
             height: 78,
-            child: Image.asset(
-              Assets.images.product.path,
-              fit: BoxFit.fill,
-            ),
+            child: Image.network(imgUrl),
           ),
         ),
         const SizedBox(
           width: 16,
         ),
-        const Expanded(
+        Expanded(
           flex: 9,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,23 +38,31 @@ class CollectionProductCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'The Midnight Library',
-                    style: AppTypography.s14w6c842,
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: AppTypography.s14w6c842,
+                    ),
                   ),
-                  Icon(
-                    Icons.save,
-                    color: AppColor.a853,
-                  ),
+                  SvgPicture.asset(Assets.icons.save),
                 ],
               ),
               Text(
-                'Matt Haig',
+                author,
                 style: AppTypography.s14w5cb842,
               ),
-              Text(
-                'The story follows a woman named Nora Seed.',
-                style: AppTypography.s14w4c83,
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 36,
+                      child: Text(
+                        description,
+                        style: AppTypography.s14w4c83,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

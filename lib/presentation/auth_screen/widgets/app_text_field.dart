@@ -1,13 +1,13 @@
 import 'package:book_reading/presentation/core/constants/colors.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class AppTextField extends StatelessWidget {
+  final bool isFailure;
   final TextEditingController controller;
   final bool isObscureText;
   final String? text;
-  final SvgPicture? suffixIcon;
+  final Widget? suffixIcon;
   final Color? textColor;
   final Color? iconColor;
   const AppTextField({
@@ -17,6 +17,7 @@ class AppTextField extends StatelessWidget {
     this.suffixIcon,
     this.textColor,
     this.iconColor,
+    this.isFailure = false,
     this.isObscureText = false,
   });
 
@@ -40,6 +41,11 @@ class AppTextField extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColor.fa,
             borderRadius: BorderRadius.circular(10),
+            border: isFailure
+                ? Border.all(
+                    color: Colors.red,
+                  )
+                : null,
           ),
           child: TextField(
             controller: controller,

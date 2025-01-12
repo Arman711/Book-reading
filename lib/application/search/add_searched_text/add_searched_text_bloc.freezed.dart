@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'book_bloc.dart';
+part of 'add_searched_text_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,112 +15,114 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$BookEvent {
-  String get type => throw _privateConstructorUsedError;
+mixin _$AddSearchedTextEvent {
+  String get text => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String type) fetchBook,
+    required TResult Function(String text) addSearchedText,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String type)? fetchBook,
+    TResult? Function(String text)? addSearchedText,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String type)? fetchBook,
+    TResult Function(String text)? addSearchedText,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FetchBook value) fetchBook,
+    required TResult Function(_AddSearchedText value) addSearchedText,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FetchBook value)? fetchBook,
+    TResult? Function(_AddSearchedText value)? addSearchedText,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchBook value)? fetchBook,
+    TResult Function(_AddSearchedText value)? addSearchedText,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
-  /// Create a copy of BookEvent
+  /// Create a copy of AddSearchedTextEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BookEventCopyWith<BookEvent> get copyWith =>
+  $AddSearchedTextEventCopyWith<AddSearchedTextEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BookEventCopyWith<$Res> {
-  factory $BookEventCopyWith(BookEvent value, $Res Function(BookEvent) then) =
-      _$BookEventCopyWithImpl<$Res, BookEvent>;
+abstract class $AddSearchedTextEventCopyWith<$Res> {
+  factory $AddSearchedTextEventCopyWith(AddSearchedTextEvent value,
+          $Res Function(AddSearchedTextEvent) then) =
+      _$AddSearchedTextEventCopyWithImpl<$Res, AddSearchedTextEvent>;
   @useResult
-  $Res call({String type});
+  $Res call({String text});
 }
 
 /// @nodoc
-class _$BookEventCopyWithImpl<$Res, $Val extends BookEvent>
-    implements $BookEventCopyWith<$Res> {
-  _$BookEventCopyWithImpl(this._value, this._then);
+class _$AddSearchedTextEventCopyWithImpl<$Res,
+        $Val extends AddSearchedTextEvent>
+    implements $AddSearchedTextEventCopyWith<$Res> {
+  _$AddSearchedTextEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BookEvent
+  /// Create a copy of AddSearchedTextEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? text = null,
   }) {
     return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$FetchBookImplCopyWith<$Res>
-    implements $BookEventCopyWith<$Res> {
-  factory _$$FetchBookImplCopyWith(
-          _$FetchBookImpl value, $Res Function(_$FetchBookImpl) then) =
-      __$$FetchBookImplCopyWithImpl<$Res>;
+abstract class _$$AddSearchedTextImplCopyWith<$Res>
+    implements $AddSearchedTextEventCopyWith<$Res> {
+  factory _$$AddSearchedTextImplCopyWith(_$AddSearchedTextImpl value,
+          $Res Function(_$AddSearchedTextImpl) then) =
+      __$$AddSearchedTextImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type});
+  $Res call({String text});
 }
 
 /// @nodoc
-class __$$FetchBookImplCopyWithImpl<$Res>
-    extends _$BookEventCopyWithImpl<$Res, _$FetchBookImpl>
-    implements _$$FetchBookImplCopyWith<$Res> {
-  __$$FetchBookImplCopyWithImpl(
-      _$FetchBookImpl _value, $Res Function(_$FetchBookImpl) _then)
+class __$$AddSearchedTextImplCopyWithImpl<$Res>
+    extends _$AddSearchedTextEventCopyWithImpl<$Res, _$AddSearchedTextImpl>
+    implements _$$AddSearchedTextImplCopyWith<$Res> {
+  __$$AddSearchedTextImplCopyWithImpl(
+      _$AddSearchedTextImpl _value, $Res Function(_$AddSearchedTextImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BookEvent
+  /// Create a copy of AddSearchedTextEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? text = null,
   }) {
-    return _then(_$FetchBookImpl(
-      null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
+    return _then(_$AddSearchedTextImpl(
+      text: null == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -128,60 +130,61 @@ class __$$FetchBookImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchBookImpl implements _FetchBook {
-  const _$FetchBookImpl(this.type);
+class _$AddSearchedTextImpl implements _AddSearchedText {
+  const _$AddSearchedTextImpl({required this.text});
 
   @override
-  final String type;
+  final String text;
 
   @override
   String toString() {
-    return 'BookEvent.fetchBook(type: $type)';
+    return 'AddSearchedTextEvent.addSearchedText(text: $text)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchBookImpl &&
-            (identical(other.type, type) || other.type == type));
+            other is _$AddSearchedTextImpl &&
+            (identical(other.text, text) || other.text == text));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type);
+  int get hashCode => Object.hash(runtimeType, text);
 
-  /// Create a copy of BookEvent
+  /// Create a copy of AddSearchedTextEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchBookImplCopyWith<_$FetchBookImpl> get copyWith =>
-      __$$FetchBookImplCopyWithImpl<_$FetchBookImpl>(this, _$identity);
+  _$$AddSearchedTextImplCopyWith<_$AddSearchedTextImpl> get copyWith =>
+      __$$AddSearchedTextImplCopyWithImpl<_$AddSearchedTextImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String type) fetchBook,
+    required TResult Function(String text) addSearchedText,
   }) {
-    return fetchBook(type);
+    return addSearchedText(text);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String type)? fetchBook,
+    TResult? Function(String text)? addSearchedText,
   }) {
-    return fetchBook?.call(type);
+    return addSearchedText?.call(text);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String type)? fetchBook,
+    TResult Function(String text)? addSearchedText,
     required TResult orElse(),
   }) {
-    if (fetchBook != null) {
-      return fetchBook(type);
+    if (addSearchedText != null) {
+      return addSearchedText(text);
     }
     return orElse();
   }
@@ -189,53 +192,54 @@ class _$FetchBookImpl implements _FetchBook {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FetchBook value) fetchBook,
+    required TResult Function(_AddSearchedText value) addSearchedText,
   }) {
-    return fetchBook(this);
+    return addSearchedText(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_FetchBook value)? fetchBook,
+    TResult? Function(_AddSearchedText value)? addSearchedText,
   }) {
-    return fetchBook?.call(this);
+    return addSearchedText?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchBook value)? fetchBook,
+    TResult Function(_AddSearchedText value)? addSearchedText,
     required TResult orElse(),
   }) {
-    if (fetchBook != null) {
-      return fetchBook(this);
+    if (addSearchedText != null) {
+      return addSearchedText(this);
     }
     return orElse();
   }
 }
 
-abstract class _FetchBook implements BookEvent {
-  const factory _FetchBook(final String type) = _$FetchBookImpl;
+abstract class _AddSearchedText implements AddSearchedTextEvent {
+  const factory _AddSearchedText({required final String text}) =
+      _$AddSearchedTextImpl;
 
   @override
-  String get type;
+  String get text;
 
-  /// Create a copy of BookEvent
+  /// Create a copy of AddSearchedTextEvent
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FetchBookImplCopyWith<_$FetchBookImpl> get copyWith =>
+  _$$AddSearchedTextImplCopyWith<_$AddSearchedTextImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$BookState {
+mixin _$AddSearchedTextState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<dynamic> books) success,
+    required TResult Function() success,
     required TResult Function(String message) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -243,7 +247,7 @@ mixin _$BookState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<dynamic> books)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -251,7 +255,7 @@ mixin _$BookState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<dynamic> books)? success,
+    TResult Function()? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) =>
@@ -284,22 +288,24 @@ mixin _$BookState {
 }
 
 /// @nodoc
-abstract class $BookStateCopyWith<$Res> {
-  factory $BookStateCopyWith(BookState value, $Res Function(BookState) then) =
-      _$BookStateCopyWithImpl<$Res, BookState>;
+abstract class $AddSearchedTextStateCopyWith<$Res> {
+  factory $AddSearchedTextStateCopyWith(AddSearchedTextState value,
+          $Res Function(AddSearchedTextState) then) =
+      _$AddSearchedTextStateCopyWithImpl<$Res, AddSearchedTextState>;
 }
 
 /// @nodoc
-class _$BookStateCopyWithImpl<$Res, $Val extends BookState>
-    implements $BookStateCopyWith<$Res> {
-  _$BookStateCopyWithImpl(this._value, this._then);
+class _$AddSearchedTextStateCopyWithImpl<$Res,
+        $Val extends AddSearchedTextState>
+    implements $AddSearchedTextStateCopyWith<$Res> {
+  _$AddSearchedTextStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BookState
+  /// Create a copy of AddSearchedTextState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -312,13 +318,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$BookStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AddSearchedTextStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BookState
+  /// Create a copy of AddSearchedTextState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -329,7 +335,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'BookState.initial()';
+    return 'AddSearchedTextState.initial()';
   }
 
   @override
@@ -346,7 +352,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<dynamic> books) success,
+    required TResult Function() success,
     required TResult Function(String message) failure,
   }) {
     return initial();
@@ -357,7 +363,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<dynamic> books)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? failure,
   }) {
     return initial?.call();
@@ -368,7 +374,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<dynamic> books)? success,
+    TResult Function()? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -416,7 +422,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements BookState {
+abstract class _Initial implements AddSearchedTextState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -429,13 +435,13 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$BookStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$AddSearchedTextStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BookState
+  /// Create a copy of AddSearchedTextState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -446,7 +452,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'BookState.loading()';
+    return 'AddSearchedTextState.loading()';
   }
 
   @override
@@ -463,7 +469,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<dynamic> books) success,
+    required TResult Function() success,
     required TResult Function(String message) failure,
   }) {
     return loading();
@@ -474,7 +480,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<dynamic> books)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? failure,
   }) {
     return loading?.call();
@@ -485,7 +491,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<dynamic> books)? success,
+    TResult Function()? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -533,7 +539,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements BookState {
+abstract class _Loading implements AddSearchedTextState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -542,81 +548,48 @@ abstract class _$$SuccessImplCopyWith<$Res> {
   factory _$$SuccessImplCopyWith(
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<dynamic> books});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$BookStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$AddSearchedTextStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BookState
+  /// Create a copy of AddSearchedTextState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? books = null,
-  }) {
-    return _then(_$SuccessImpl(
-      books: null == books
-          ? _value._books
-          : books // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl({required final List<dynamic> books}) : _books = books;
-
-  final List<dynamic> _books;
-  @override
-  List<dynamic> get books {
-    if (_books is EqualUnmodifiableListView) return _books;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_books);
-  }
+  const _$SuccessImpl();
 
   @override
   String toString() {
-    return 'BookState.success(books: $books)';
+    return 'AddSearchedTextState.success()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            const DeepCollectionEquality().equals(other._books, _books));
+        (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_books));
-
-  /// Create a copy of BookState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<dynamic> books) success,
+    required TResult Function() success,
     required TResult Function(String message) failure,
   }) {
-    return success(books);
+    return success();
   }
 
   @override
@@ -624,10 +597,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<dynamic> books)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? failure,
   }) {
-    return success?.call(books);
+    return success?.call();
   }
 
   @override
@@ -635,12 +608,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<dynamic> books)? success,
+    TResult Function()? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(books);
+      return success();
     }
     return orElse();
   }
@@ -683,16 +656,8 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements BookState {
-  const factory _Success({required final List<dynamic> books}) = _$SuccessImpl;
-
-  List<dynamic> get books;
-
-  /// Create a copy of BookState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Success implements AddSearchedTextState {
+  const factory _Success() = _$SuccessImpl;
 }
 
 /// @nodoc
@@ -706,13 +671,13 @@ abstract class _$$FailureImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailureImplCopyWithImpl<$Res>
-    extends _$BookStateCopyWithImpl<$Res, _$FailureImpl>
+    extends _$AddSearchedTextStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
   __$$FailureImplCopyWithImpl(
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BookState
+  /// Create a copy of AddSearchedTextState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -738,7 +703,7 @@ class _$FailureImpl implements _Failure {
 
   @override
   String toString() {
-    return 'BookState.failure(message: $message)';
+    return 'AddSearchedTextState.failure(message: $message)';
   }
 
   @override
@@ -752,7 +717,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of BookState
+  /// Create a copy of AddSearchedTextState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -765,7 +730,7 @@ class _$FailureImpl implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<dynamic> books) success,
+    required TResult Function() success,
     required TResult Function(String message) failure,
   }) {
     return failure(message);
@@ -776,7 +741,7 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<dynamic> books)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? failure,
   }) {
     return failure?.call(message);
@@ -787,7 +752,7 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<dynamic> books)? success,
+    TResult Function()? success,
     TResult Function(String message)? failure,
     required TResult orElse(),
   }) {
@@ -835,12 +800,12 @@ class _$FailureImpl implements _Failure {
   }
 }
 
-abstract class _Failure implements BookState {
+abstract class _Failure implements AddSearchedTextState {
   const factory _Failure({required final String message}) = _$FailureImpl;
 
   String get message;
 
-  /// Create a copy of BookState
+  /// Create a copy of AddSearchedTextState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>

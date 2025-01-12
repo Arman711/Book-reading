@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:book_reading/application/book_bloc/book_bloc.dart';
-import 'package:book_reading/application/non_fiction_cubit/non_fiction_book_cubit.dart';
+import 'package:book_reading/application/book/book_bloc/book_bloc.dart';
+import 'package:book_reading/di.dart';
 import 'package:book_reading/domain/book/entity/book.dart';
 import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: CustomAppBar(
           prefixIcon: SvgPicture.asset(
             Assets.icons.menu,
@@ -49,42 +50,46 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 22,
                 ),
-                BlocBuilder<BookBloc, BookState>(
-                  builder: (context, state) {
-                    return state.when(
-                      initial: () => const SizedBox(),
-                      loading: () => const Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                      success: (books) => SizedBox(
-                        height: 330,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          separatorBuilder: (context, index) {
-                            return const SizedBox(
-                              width: 20,
-                            );
-                          },
-                          itemBuilder: (context, index) {
-                            final Book book = books[index];
-
-                            return ProductCard(
-                              id: book.id,
-                              typeText: 'Fiction',
-                              imgUrl: book.imgUrl.isNotEmpty
-                                  ? book.imgUrl
-                                  : Assets.images.product.path,
-                              title: book.title,
-                            );
-                          },
-                          itemCount: 4,
+                BlocProvider(
+                  create: (context) =>
+                      BookBloc(di())..add(const BookEvent.fetchBook('Fiction')),
+                  child: BlocBuilder<BookBloc, BookState>(
+                    builder: (context, state) {
+                      return state.when(
+                        initial: () => const SizedBox(),
+                        loading: () => const Center(
+                          child: CircularProgressIndicator(),
                         ),
-                      ),
-                      failure: (message) => Center(
-                        child: Text(message),
-                      ),
-                    );
-                  },
+                        success: (books) => SizedBox(
+                          height: 330,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            separatorBuilder: (context, index) {
+                              return const SizedBox(
+                                width: 20,
+                              );
+                            },
+                            itemBuilder: (context, index) {
+                              final Book book = books[index];
+
+                              return ProductCard(
+                                id: book.id,
+                                typeText: 'Fiction',
+                                imgUrl: book.imgUrl.isNotEmpty
+                                    ? book.imgUrl
+                                    : Assets.images.product.path,
+                                title: book.title,
+                              );
+                            },
+                            itemCount: 4,
+                          ),
+                        ),
+                        failure: (message) => Center(
+                          child: Text(message),
+                        ),
+                      );
+                    },
+                  ),
                 ),
                 const SizedBox(
                   height: 32,
@@ -100,41 +105,45 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                BlocBuilder<NonFictionBookCubit, NonFictionBookState>(
-                  builder: (context, state) {
-                    return state.when(
-                      initial: () => const SizedBox(),
-                      loading: () => const Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                      failure: (message) => Center(
-                        child: Text(message),
-                      ),
-                      success: (books) => SizedBox(
-                        height: 330,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          separatorBuilder: (context, index) {
-                            return const SizedBox(
-                              width: 20,
-                            );
-                          },
-                          itemBuilder: (context, index) {
-                            final Book book = books[index];
-                            return ProductCard(
-                              id: book.id,
-                              typeText: 'Non-Fiction',
-                              imgUrl: book.imgUrl.isNotEmpty
-                                  ? book.imgUrl
-                                  : Assets.images.product.path,
-                              title: book.title,
-                            );
-                          },
-                          itemCount: 4,
+                BlocProvider(
+                  create: (context) => BookBloc(di())
+                    ..add(const BookEvent.fetchBook('non-Fiction')),
+                  child: BlocBuilder<BookBloc, BookState>(
+                    builder: (context, state) {
+                      return state.when(
+                        initial: () => const SizedBox(),
+                        loading: () => const Center(
+                          child: CircularProgressIndicator(),
                         ),
-                      ),
-                    );
-                  },
+                        failure: (message) => Center(
+                          child: Text(message),
+                        ),
+                        success: (books) => SizedBox(
+                          height: 330,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            separatorBuilder: (context, index) {
+                              return const SizedBox(
+                                width: 20,
+                              );
+                            },
+                            itemBuilder: (context, index) {
+                              final Book book = books[index];
+                              return ProductCard(
+                                id: book.id,
+                                typeText: 'Non-Fiction',
+                                imgUrl: book.imgUrl.isNotEmpty
+                                    ? book.imgUrl
+                                    : Assets.images.product.path,
+                                title: book.title,
+                              );
+                            },
+                            itemCount: 4,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),

@@ -10,5 +10,6 @@ abstract interface class IAuthRepository {
     required String password,
   });
   Future<Either<String, Unit>> signUpWithGoogle();
-  Future<Either<String, Unit>> signOut();
+  Future<void> signOut();
+  bool checkIfUserSignedIn();
 }

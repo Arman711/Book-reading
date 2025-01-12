@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:book_reading/application/cubit/get_book_cubit.dart';
+import 'package:book_reading/application/book/cubit/get_book_cubit.dart';
 import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';
 import 'package:book_reading/presentation/core/router/router.dart';

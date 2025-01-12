@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
-import 'package:book_reading/application/cubit/get_book_cubit.dart';
+import 'package:book_reading/application/book/adding_book_in_collection/adding_book_in_collection_bloc.dart';
+import 'package:book_reading/application/book/cubit/get_book_cubit.dart';
 import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/widgets/custom_appbar.dart';
 import 'package:book_reading/presentation/explore_screen/widgets/content_tile.dart';
@@ -17,6 +18,7 @@ class ExploreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: CustomAppBar(
           top: MediaQuery.of(context).padding.top,
           prefixIcon: SvgPicture.asset(
@@ -59,6 +61,29 @@ class ExploreScreen extends StatelessWidget {
                                 book.imgUrl,
                                 fit: BoxFit.cover,
                               ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          context.read<AddingBookInCollectionBloc>().add(
+                                AddingBookInCollectionEvent.addBookInCollection(
+                                    book: book),
+                              );
+                        },
+                        child: BlocBuilder<AddingBookInCollectionBloc,
+                            AddingBookInCollectionState>(
+                          builder: (context, state) {
+                            return state.when(
+                              initial: () =>
+                                  const Text('+ Add to your collection'),
+                              loading: () => const Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                              success: () =>
+                                  const Text('Book added in your collection'),
+                              failure: (message) => Text(message),
+                            );
+                          },
+                        ),
                       ),
                       const SizedBox(
                         height: 30,
