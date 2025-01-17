@@ -22,6 +22,7 @@ mixin _$AuthEvent {
         signUpWithEmailAndPassword,
     required TResult Function(String email, String password) logIn,
     required TResult Function() signInWithGoogle,
+    required TResult Function() checkIfUserSignedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$AuthEvent {
         signUpWithEmailAndPassword,
     TResult? Function(String email, String password)? logIn,
     TResult? Function()? signInWithGoogle,
+    TResult? Function()? checkIfUserSignedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +39,7 @@ mixin _$AuthEvent {
     TResult Function(String email, String password)? signUpWithEmailAndPassword,
     TResult Function(String email, String password)? logIn,
     TResult Function()? signInWithGoogle,
+    TResult Function()? checkIfUserSignedIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,6 +49,7 @@ mixin _$AuthEvent {
         signUpWithEmailAndPassword,
     required TResult Function(_LogIn value) logIn,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_CheckIfUserSignedIn value) checkIfUserSignedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +58,7 @@ mixin _$AuthEvent {
         signUpWithEmailAndPassword,
     TResult? Function(_LogIn value)? logIn,
     TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +67,7 @@ mixin _$AuthEvent {
         signUpWithEmailAndPassword,
     TResult Function(_LogIn value)? logIn,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -172,6 +178,7 @@ class _$SignUpWithEmailAndPasswordImpl implements _SignUpWithEmailAndPassword {
         signUpWithEmailAndPassword,
     required TResult Function(String email, String password) logIn,
     required TResult Function() signInWithGoogle,
+    required TResult Function() checkIfUserSignedIn,
   }) {
     return signUpWithEmailAndPassword(email, password);
   }
@@ -183,6 +190,7 @@ class _$SignUpWithEmailAndPasswordImpl implements _SignUpWithEmailAndPassword {
         signUpWithEmailAndPassword,
     TResult? Function(String email, String password)? logIn,
     TResult? Function()? signInWithGoogle,
+    TResult? Function()? checkIfUserSignedIn,
   }) {
     return signUpWithEmailAndPassword?.call(email, password);
   }
@@ -193,6 +201,7 @@ class _$SignUpWithEmailAndPasswordImpl implements _SignUpWithEmailAndPassword {
     TResult Function(String email, String password)? signUpWithEmailAndPassword,
     TResult Function(String email, String password)? logIn,
     TResult Function()? signInWithGoogle,
+    TResult Function()? checkIfUserSignedIn,
     required TResult orElse(),
   }) {
     if (signUpWithEmailAndPassword != null) {
@@ -208,6 +217,7 @@ class _$SignUpWithEmailAndPasswordImpl implements _SignUpWithEmailAndPassword {
         signUpWithEmailAndPassword,
     required TResult Function(_LogIn value) logIn,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_CheckIfUserSignedIn value) checkIfUserSignedIn,
   }) {
     return signUpWithEmailAndPassword(this);
   }
@@ -219,6 +229,7 @@ class _$SignUpWithEmailAndPasswordImpl implements _SignUpWithEmailAndPassword {
         signUpWithEmailAndPassword,
     TResult? Function(_LogIn value)? logIn,
     TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
   }) {
     return signUpWithEmailAndPassword?.call(this);
   }
@@ -230,6 +241,7 @@ class _$SignUpWithEmailAndPasswordImpl implements _SignUpWithEmailAndPassword {
         signUpWithEmailAndPassword,
     TResult Function(_LogIn value)? logIn,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
     required TResult orElse(),
   }) {
     if (signUpWithEmailAndPassword != null) {
@@ -335,6 +347,7 @@ class _$LogInImpl implements _LogIn {
         signUpWithEmailAndPassword,
     required TResult Function(String email, String password) logIn,
     required TResult Function() signInWithGoogle,
+    required TResult Function() checkIfUserSignedIn,
   }) {
     return logIn(email, password);
   }
@@ -346,6 +359,7 @@ class _$LogInImpl implements _LogIn {
         signUpWithEmailAndPassword,
     TResult? Function(String email, String password)? logIn,
     TResult? Function()? signInWithGoogle,
+    TResult? Function()? checkIfUserSignedIn,
   }) {
     return logIn?.call(email, password);
   }
@@ -356,6 +370,7 @@ class _$LogInImpl implements _LogIn {
     TResult Function(String email, String password)? signUpWithEmailAndPassword,
     TResult Function(String email, String password)? logIn,
     TResult Function()? signInWithGoogle,
+    TResult Function()? checkIfUserSignedIn,
     required TResult orElse(),
   }) {
     if (logIn != null) {
@@ -371,6 +386,7 @@ class _$LogInImpl implements _LogIn {
         signUpWithEmailAndPassword,
     required TResult Function(_LogIn value) logIn,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_CheckIfUserSignedIn value) checkIfUserSignedIn,
   }) {
     return logIn(this);
   }
@@ -382,6 +398,7 @@ class _$LogInImpl implements _LogIn {
         signUpWithEmailAndPassword,
     TResult? Function(_LogIn value)? logIn,
     TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
   }) {
     return logIn?.call(this);
   }
@@ -393,6 +410,7 @@ class _$LogInImpl implements _LogIn {
         signUpWithEmailAndPassword,
     TResult Function(_LogIn value)? logIn,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
     required TResult orElse(),
   }) {
     if (logIn != null) {
@@ -462,6 +480,7 @@ class _$SignInWithGoogleImpl implements _SignInWithGoogle {
         signUpWithEmailAndPassword,
     required TResult Function(String email, String password) logIn,
     required TResult Function() signInWithGoogle,
+    required TResult Function() checkIfUserSignedIn,
   }) {
     return signInWithGoogle();
   }
@@ -473,6 +492,7 @@ class _$SignInWithGoogleImpl implements _SignInWithGoogle {
         signUpWithEmailAndPassword,
     TResult? Function(String email, String password)? logIn,
     TResult? Function()? signInWithGoogle,
+    TResult? Function()? checkIfUserSignedIn,
   }) {
     return signInWithGoogle?.call();
   }
@@ -483,6 +503,7 @@ class _$SignInWithGoogleImpl implements _SignInWithGoogle {
     TResult Function(String email, String password)? signUpWithEmailAndPassword,
     TResult Function(String email, String password)? logIn,
     TResult Function()? signInWithGoogle,
+    TResult Function()? checkIfUserSignedIn,
     required TResult orElse(),
   }) {
     if (signInWithGoogle != null) {
@@ -498,6 +519,7 @@ class _$SignInWithGoogleImpl implements _SignInWithGoogle {
         signUpWithEmailAndPassword,
     required TResult Function(_LogIn value) logIn,
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_CheckIfUserSignedIn value) checkIfUserSignedIn,
   }) {
     return signInWithGoogle(this);
   }
@@ -509,6 +531,7 @@ class _$SignInWithGoogleImpl implements _SignInWithGoogle {
         signUpWithEmailAndPassword,
     TResult? Function(_LogIn value)? logIn,
     TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
   }) {
     return signInWithGoogle?.call(this);
   }
@@ -520,6 +543,7 @@ class _$SignInWithGoogleImpl implements _SignInWithGoogle {
         signUpWithEmailAndPassword,
     TResult Function(_LogIn value)? logIn,
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
     required TResult orElse(),
   }) {
     if (signInWithGoogle != null) {
@@ -531,6 +555,129 @@ class _$SignInWithGoogleImpl implements _SignInWithGoogle {
 
 abstract class _SignInWithGoogle implements AuthEvent {
   const factory _SignInWithGoogle() = _$SignInWithGoogleImpl;
+}
+
+/// @nodoc
+abstract class _$$CheckIfUserSignedInImplCopyWith<$Res> {
+  factory _$$CheckIfUserSignedInImplCopyWith(_$CheckIfUserSignedInImpl value,
+          $Res Function(_$CheckIfUserSignedInImpl) then) =
+      __$$CheckIfUserSignedInImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CheckIfUserSignedInImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$CheckIfUserSignedInImpl>
+    implements _$$CheckIfUserSignedInImplCopyWith<$Res> {
+  __$$CheckIfUserSignedInImplCopyWithImpl(_$CheckIfUserSignedInImpl _value,
+      $Res Function(_$CheckIfUserSignedInImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CheckIfUserSignedInImpl implements _CheckIfUserSignedIn {
+  const _$CheckIfUserSignedInImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.checkIfUserSignedIn()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CheckIfUserSignedInImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email, String password)
+        signUpWithEmailAndPassword,
+    required TResult Function(String email, String password) logIn,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() checkIfUserSignedIn,
+  }) {
+    return checkIfUserSignedIn();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String email, String password)?
+        signUpWithEmailAndPassword,
+    TResult? Function(String email, String password)? logIn,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? checkIfUserSignedIn,
+  }) {
+    return checkIfUserSignedIn?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email, String password)? signUpWithEmailAndPassword,
+    TResult Function(String email, String password)? logIn,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? checkIfUserSignedIn,
+    required TResult orElse(),
+  }) {
+    if (checkIfUserSignedIn != null) {
+      return checkIfUserSignedIn();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignUpWithEmailAndPassword value)
+        signUpWithEmailAndPassword,
+    required TResult Function(_LogIn value) logIn,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_CheckIfUserSignedIn value) checkIfUserSignedIn,
+  }) {
+    return checkIfUserSignedIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignUpWithEmailAndPassword value)?
+        signUpWithEmailAndPassword,
+    TResult? Function(_LogIn value)? logIn,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
+  }) {
+    return checkIfUserSignedIn?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignUpWithEmailAndPassword value)?
+        signUpWithEmailAndPassword,
+    TResult Function(_LogIn value)? logIn,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_CheckIfUserSignedIn value)? checkIfUserSignedIn,
+    required TResult orElse(),
+  }) {
+    if (checkIfUserSignedIn != null) {
+      return checkIfUserSignedIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CheckIfUserSignedIn implements AuthEvent {
+  const factory _CheckIfUserSignedIn() = _$CheckIfUserSignedInImpl;
 }
 
 /// @nodoc

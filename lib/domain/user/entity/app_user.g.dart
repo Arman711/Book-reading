@@ -6,17 +6,15 @@ part of 'app_user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AppUserImpl _$$AppUserImplFromJson(Map<String, dynamic> json) =>
-    _$AppUserImpl(
+AppUser _$AppUserFromJson(Map<String, dynamic> json) => AppUser(
       id: json['id'] as String,
-      email: json['email'] as String,
       bookCollection: (json['book_collection'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
+      email: json['email'] as String,
     );
 
-Map<String, dynamic> _$$AppUserImplToJson(_$AppUserImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AppUserToJson(AppUser instance) => <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
       'book_collection': instance.bookCollection,

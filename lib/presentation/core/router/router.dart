@@ -4,6 +4,7 @@ import 'package:book_reading/presentation/collection_screen/collection_screen.da
 import 'package:book_reading/presentation/explore_screen/explore_screen.dart';
 import 'package:book_reading/presentation/general_screen/general_screen.dart';
 import 'package:book_reading/presentation/home_screen/home_screen.dart';
+import 'package:book_reading/presentation/initial_screen/initial_screen.dart';
 import 'package:book_reading/presentation/search_screen/search_screen.dart';
 
 part 'router.gr.dart';
@@ -15,6 +16,10 @@ class AppRouter extends RootStackRouter {
         AutoRoute(
           path: '/',
           initial: true,
+          page: InitialRoute.page,
+        ),
+        AutoRoute(
+          path: '/auth',
           page: AuthRoute.page,
         ),
         AutoRoute(

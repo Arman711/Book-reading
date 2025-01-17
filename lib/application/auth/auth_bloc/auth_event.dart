@@ -11,4 +11,5 @@ class AuthEvent with _$AuthEvent {
     required String password,
   }) = _LogIn;
   const factory AuthEvent.signInWithGoogle() = _SignInWithGoogle;
+  const factory AuthEvent.checkIfUserSignedIn() = _CheckIfUserSignedIn;
 }

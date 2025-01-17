@@ -1,6 +1,6 @@
 import 'package:book_reading/application/book/adding_book_in_collection/adding_book_in_collection_bloc.dart';
 import 'package:book_reading/application/search/add_searched_text/add_searched_text_bloc.dart';
-import 'package:book_reading/application/auth_bloc/auth_bloc.dart';
+import 'package:book_reading/application/auth/auth_bloc/auth_bloc.dart';
 import 'package:book_reading/application/book/book_bloc/book_bloc.dart';
 import 'package:book_reading/application/book/cubit/get_book_cubit.dart';
 import 'package:book_reading/application/search/searched_text_bloc/searched_text_bloc.dart';
@@ -51,10 +51,15 @@ Future<void> initializeDependencies() async {
       di(),
     ),
   );
+  // di.registerLazySingleton<CheckUserBloc>(
+  //   () => CheckUserBloc(
+  //     di(),
+  //   ),
+  // );
   di.registerSingleton<IBookRepository>(
     BookRepositoryImpl(),
   );
-  di.registerLazySingleton<BookBloc>(
+  di.registerFactory<BookBloc>(
     () => BookBloc(
       di(),
     ),

@@ -6,13 +6,19 @@ import 'package:fpdart/fpdart.dart';
 
 class UserRepositoryImpl implements IUserRepository {
   @override
-  Future<Either<String, Unit>> createUser({required AppUser user}) async {
+  Future<Either<String, Unit>> createUser() async {
     final _auth = FirebaseAuth.instance;
     final _firestore = FirebaseFirestore.instance;
     try {
-      final userData = user.toJson();
+      // final userData = user.toJson();
       final String userId = _auth.currentUser!.uid;
-      await _firestore.collection('users').doc(userId).set(userData);
+      final String? email = _auth.currentUser!.email;
+
+      await _firestore.collection('users').doc(userId).set(AppUser(
+            id: userId,
+            bookCollection: [],
+            email: email as String,
+          ).toJson());
       return const Right(unit);
     } catch (e) {
       return const Left('Failure to create user');

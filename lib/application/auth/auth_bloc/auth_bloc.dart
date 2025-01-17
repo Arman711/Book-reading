@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:book_reading/domain/auth/i_auth_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

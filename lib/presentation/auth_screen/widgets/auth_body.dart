@@ -1,4 +1,4 @@
-import 'package:book_reading/application/auth_bloc/auth_bloc.dart';
+import 'package:book_reading/application/auth/auth_bloc/auth_bloc.dart';
 import 'package:book_reading/gen/assets.gen.dart';
 import 'package:book_reading/presentation/core/constants/colors.dart';
 import 'package:book_reading/presentation/core/constants/typography.dart';

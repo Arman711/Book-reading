@@ -105,6 +105,25 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [InitialScreen]
+class InitialRoute extends PageRouteInfo<void> {
+  const InitialRoute({List<PageRouteInfo>? children})
+      : super(
+          InitialRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'InitialRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const InitialScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [SearchScreen]
 class SearchRoute extends PageRouteInfo<void> {
   const SearchRoute({List<PageRouteInfo>? children})

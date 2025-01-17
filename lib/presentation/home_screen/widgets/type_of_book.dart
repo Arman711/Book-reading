@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class TypeOfBook extends StatelessWidget {
   final String text;
-  const TypeOfBook({super.key, required this.text});
+  const TypeOfBook({
+    super.key,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {

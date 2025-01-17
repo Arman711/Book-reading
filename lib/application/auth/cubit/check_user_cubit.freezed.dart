@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'user_bloc.dart';
+part of 'check_user_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,320 +15,13 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$UserEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() createUser,
-    required TResult Function(String id) deleteUser,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? createUser,
-    TResult? Function(String id)? deleteUser,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? createUser,
-    TResult Function(String id)? deleteUser,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CreateUser value) createUser,
-    required TResult Function(_DeleteUser value) deleteUser,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreateUser value)? createUser,
-    TResult? Function(_DeleteUser value)? deleteUser,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreateUser value)? createUser,
-    TResult Function(_DeleteUser value)? deleteUser,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UserEventCopyWith<$Res> {
-  factory $UserEventCopyWith(UserEvent value, $Res Function(UserEvent) then) =
-      _$UserEventCopyWithImpl<$Res, UserEvent>;
-}
-
-/// @nodoc
-class _$UserEventCopyWithImpl<$Res, $Val extends UserEvent>
-    implements $UserEventCopyWith<$Res> {
-  _$UserEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of UserEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$CreateUserImplCopyWith<$Res> {
-  factory _$$CreateUserImplCopyWith(
-          _$CreateUserImpl value, $Res Function(_$CreateUserImpl) then) =
-      __$$CreateUserImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$CreateUserImplCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$CreateUserImpl>
-    implements _$$CreateUserImplCopyWith<$Res> {
-  __$$CreateUserImplCopyWithImpl(
-      _$CreateUserImpl _value, $Res Function(_$CreateUserImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UserEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$CreateUserImpl implements _CreateUser {
-  const _$CreateUserImpl();
-
-  @override
-  String toString() {
-    return 'UserEvent.createUser()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CreateUserImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() createUser,
-    required TResult Function(String id) deleteUser,
-  }) {
-    return createUser();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? createUser,
-    TResult? Function(String id)? deleteUser,
-  }) {
-    return createUser?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? createUser,
-    TResult Function(String id)? deleteUser,
-    required TResult orElse(),
-  }) {
-    if (createUser != null) {
-      return createUser();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CreateUser value) createUser,
-    required TResult Function(_DeleteUser value) deleteUser,
-  }) {
-    return createUser(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreateUser value)? createUser,
-    TResult? Function(_DeleteUser value)? deleteUser,
-  }) {
-    return createUser?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreateUser value)? createUser,
-    TResult Function(_DeleteUser value)? deleteUser,
-    required TResult orElse(),
-  }) {
-    if (createUser != null) {
-      return createUser(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CreateUser implements UserEvent {
-  const factory _CreateUser() = _$CreateUserImpl;
-}
-
-/// @nodoc
-abstract class _$$DeleteUserImplCopyWith<$Res> {
-  factory _$$DeleteUserImplCopyWith(
-          _$DeleteUserImpl value, $Res Function(_$DeleteUserImpl) then) =
-      __$$DeleteUserImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String id});
-}
-
-/// @nodoc
-class __$$DeleteUserImplCopyWithImpl<$Res>
-    extends _$UserEventCopyWithImpl<$Res, _$DeleteUserImpl>
-    implements _$$DeleteUserImplCopyWith<$Res> {
-  __$$DeleteUserImplCopyWithImpl(
-      _$DeleteUserImpl _value, $Res Function(_$DeleteUserImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UserEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$DeleteUserImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$DeleteUserImpl implements _DeleteUser {
-  const _$DeleteUserImpl({required this.id});
-
-  @override
-  final String id;
-
-  @override
-  String toString() {
-    return 'UserEvent.deleteUser(id: $id)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeleteUserImpl &&
-            (identical(other.id, id) || other.id == id));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  /// Create a copy of UserEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeleteUserImplCopyWith<_$DeleteUserImpl> get copyWith =>
-      __$$DeleteUserImplCopyWithImpl<_$DeleteUserImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() createUser,
-    required TResult Function(String id) deleteUser,
-  }) {
-    return deleteUser(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? createUser,
-    TResult? Function(String id)? deleteUser,
-  }) {
-    return deleteUser?.call(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? createUser,
-    TResult Function(String id)? deleteUser,
-    required TResult orElse(),
-  }) {
-    if (deleteUser != null) {
-      return deleteUser(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CreateUser value) createUser,
-    required TResult Function(_DeleteUser value) deleteUser,
-  }) {
-    return deleteUser(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreateUser value)? createUser,
-    TResult? Function(_DeleteUser value)? deleteUser,
-  }) {
-    return deleteUser?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreateUser value)? createUser,
-    TResult Function(_DeleteUser value)? deleteUser,
-    required TResult orElse(),
-  }) {
-    if (deleteUser != null) {
-      return deleteUser(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DeleteUser implements UserEvent {
-  const factory _DeleteUser({required final String id}) = _$DeleteUserImpl;
-
-  String get id;
-
-  /// Create a copy of UserEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DeleteUserImplCopyWith<_$DeleteUserImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$UserState {
+mixin _$CheckUserState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function() failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -336,7 +29,7 @@ mixin _$UserState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function()? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -344,7 +37,7 @@ mixin _$UserState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function()? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -376,22 +69,23 @@ mixin _$UserState {
 }
 
 /// @nodoc
-abstract class $UserStateCopyWith<$Res> {
-  factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
-      _$UserStateCopyWithImpl<$Res, UserState>;
+abstract class $CheckUserStateCopyWith<$Res> {
+  factory $CheckUserStateCopyWith(
+          CheckUserState value, $Res Function(CheckUserState) then) =
+      _$CheckUserStateCopyWithImpl<$Res, CheckUserState>;
 }
 
 /// @nodoc
-class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
-    implements $UserStateCopyWith<$Res> {
-  _$UserStateCopyWithImpl(this._value, this._then);
+class _$CheckUserStateCopyWithImpl<$Res, $Val extends CheckUserState>
+    implements $CheckUserStateCopyWith<$Res> {
+  _$CheckUserStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of UserState
+  /// Create a copy of CheckUserState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -404,13 +98,13 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$CheckUserStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserState
+  /// Create a copy of CheckUserState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -421,7 +115,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'UserState.initial()';
+    return 'CheckUserState.initial()';
   }
 
   @override
@@ -439,7 +133,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function() failure,
   }) {
     return initial();
   }
@@ -450,7 +144,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function()? failure,
   }) {
     return initial?.call();
   }
@@ -461,7 +155,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -508,7 +202,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements UserState {
+abstract class _Initial implements CheckUserState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -521,13 +215,13 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$CheckUserStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserState
+  /// Create a copy of CheckUserState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -538,7 +232,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'UserState.loading()';
+    return 'CheckUserState.loading()';
   }
 
   @override
@@ -556,7 +250,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function() failure,
   }) {
     return loading();
   }
@@ -567,7 +261,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function()? failure,
   }) {
     return loading?.call();
   }
@@ -578,7 +272,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -625,7 +319,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements UserState {
+abstract class _Loading implements CheckUserState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -638,13 +332,13 @@ abstract class _$$SuccessImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$CheckUserStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserState
+  /// Create a copy of CheckUserState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -655,7 +349,7 @@ class _$SuccessImpl implements _Success {
 
   @override
   String toString() {
-    return 'UserState.success()';
+    return 'CheckUserState.success()';
   }
 
   @override
@@ -673,7 +367,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function() failure,
   }) {
     return success();
   }
@@ -684,7 +378,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function()? failure,
   }) {
     return success?.call();
   }
@@ -695,7 +389,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -742,7 +436,7 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements UserState {
+abstract class _Success implements CheckUserState {
   const factory _Success() = _$SuccessImpl;
 }
 
@@ -751,65 +445,38 @@ abstract class _$$FailureImplCopyWith<$Res> {
   factory _$$FailureImplCopyWith(
           _$FailureImpl value, $Res Function(_$FailureImpl) then) =
       __$$FailureImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
 }
 
 /// @nodoc
 class __$$FailureImplCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$FailureImpl>
+    extends _$CheckUserStateCopyWithImpl<$Res, _$FailureImpl>
     implements _$$FailureImplCopyWith<$Res> {
   __$$FailureImplCopyWithImpl(
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of UserState
+  /// Create a copy of CheckUserState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$FailureImpl(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$FailureImpl implements _Failure {
-  const _$FailureImpl({required this.message});
-
-  @override
-  final String message;
+  const _$FailureImpl();
 
   @override
   String toString() {
-    return 'UserState.failure(message: $message)';
+    return 'CheckUserState.failure()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FailureImpl &&
-            (identical(other.message, message) || other.message == message));
+        (other.runtimeType == runtimeType && other is _$FailureImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  /// Create a copy of UserState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -817,9 +484,9 @@ class _$FailureImpl implements _Failure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function() failure,
   }) {
-    return failure(message);
+    return failure();
   }
 
   @override
@@ -828,9 +495,9 @@ class _$FailureImpl implements _Failure {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function()? failure,
   }) {
-    return failure?.call(message);
+    return failure?.call();
   }
 
   @override
@@ -839,11 +506,11 @@ class _$FailureImpl implements _Failure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function()? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(message);
+      return failure();
     }
     return orElse();
   }
@@ -886,14 +553,6 @@ class _$FailureImpl implements _Failure {
   }
 }
 
-abstract class _Failure implements UserState {
-  const factory _Failure({required final String message}) = _$FailureImpl;
-
-  String get message;
-
-  /// Create a copy of UserState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Failure implements CheckUserState {
+  const factory _Failure() = _$FailureImpl;
 }

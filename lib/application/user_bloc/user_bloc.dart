@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:book_reading/domain/user/entity/app_user.dart';
 import 'package:book_reading/domain/user/i_user_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -18,7 +17,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     emit(
       const UserState.loading(),
     );
-    final response = await repo.createUser(user: event.user);
+    final response = await repo.createUser();
     response.fold(
       (message) {
         emit(

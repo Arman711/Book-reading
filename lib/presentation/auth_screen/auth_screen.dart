@@ -1,10 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:book_reading/application/auth_bloc/auth_bloc.dart';
+import 'package:book_reading/application/auth/auth_bloc/auth_bloc.dart';
 import 'package:book_reading/application/user_bloc/user_bloc.dart';
-import 'package:book_reading/domain/user/entity/app_user.dart';
 import 'package:book_reading/presentation/auth_screen/widgets/auth_body.dart';
 import 'package:book_reading/presentation/core/router/router.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,13 +32,7 @@ class AuthScreen extends StatelessWidget {
         // ignore: body_might_complete_normally_nullable
         success: () {
           context.read<UserBloc>().add(
-                UserEvent.createUser(
-                  user: AppUser(
-                    id: FirebaseAuth.instance.currentUser!.uid,
-                    email: emailController.text,
-                    bookCollection: [],
-                  ),
-                ),
+                const UserEvent.createUser(),
               );
 
           context.router.push(
